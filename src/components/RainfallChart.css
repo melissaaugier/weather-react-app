@@ -1,0 +1,16 @@
+.RainfallChart {
+    width: 250px;
+    border: 0.5px solid #fff;
+    border-radius: 14px;
+    padding: 16px;
+    color: #fff;
+
+    img {
+        position:absolute;
+        right: 48px;
+    }
+}
+    
+canvas {
+    width: 100%;
+}
