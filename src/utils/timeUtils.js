@@ -18,3 +18,39 @@ export const convertUnixToReadableDate = (unixTimestamp) => {
     
     return formattedDate;
 };
+
+
+export const convertUnixToReadableDateTime = (unixTimestamp) => {
+    const date = new Date(unixTimestamp * 1000); // Convert Unix timestamp to milliseconds
+
+    // Get the day of the week
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const dayOfWeek = daysOfWeek[date.getDay()];
+    const day = date.getDate();
+
+    // Get the month
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const month = months[date.getMonth()];
+
+    const year = date.getFullYear();
+
+    // Format the date
+    const formattedDate = `${dayOfWeek}, ${month} ${day}, ${year}`;
+    
+    return formattedDate;
+};
+
+
+export const convertUnixToReadableDayDate = (unixTimestamp) => {
+    const date = new Date(unixTimestamp * 1000); // Convert Unix timestamp to milliseconds
+
+    // Get the day of the week
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    const dayOfWeek = daysOfWeek[date.getDay()];
+    const day = date.getDate();
+
+    // Format the date
+    const formattedDate = `${dayOfWeek} ${day}`;
+    
+    return formattedDate;
+};

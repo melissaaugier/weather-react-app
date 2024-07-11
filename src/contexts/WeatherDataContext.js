@@ -3,13 +3,28 @@ import React, { createContext, useState, useEffect } from 'react';
 export const WeatherDataContext = createContext();
 
 const apiKey = process.env.REACT_APP_KEY_OPENWEATHER; 
-const apiUrlBase = 'https://api.openweathermap.org/data/2.5/forecast?cnt=8&units=metric';
+const apiUrlBase = 'https://api.openweathermap.org/data/2.5/forecast?units=metric';
 
 export const WeatherDataProvider = ({ children }) => {
     const [weatherData, setWeatherData] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [bgImg, setBgImg] = useState('drizzle');
+
+    const formatForecastData = (data) => {
+        // Filter and keep only one timestamp per day for 5 days
+        const filteredData = {};
+        data.list.forEach(item => {
+            const date = item.dt_txt.split(' ')[0]; // Extract date part only
+            if (!filteredData[date] || item.dt_txt.includes('12:00:00')) {
+                filteredData[date] = item;
+            }
+        });
+        return {
+            ...data,
+            list: Object.values(filteredData)
+        };
+    };
 
     const fetchWeather = async (city) => {
         if (!city) return;
@@ -25,7 +40,8 @@ export const WeatherDataProvider = ({ children }) => {
             }
                 
             const data = await response.json();
-            setWeatherData(data);
+            const formattedData = formatForecastData(data);
+            setWeatherData(formattedData);
             setBgImg(getWeatherBackground(data));
         } catch (error) {
             console.error('Error fetching weather data:', error);

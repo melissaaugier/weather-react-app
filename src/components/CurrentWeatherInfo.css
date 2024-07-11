@@ -1,0 +1,13 @@
+.weatherInfo {
+    width: 60%;
+
+    p {
+        margin: 0;
+        line-height: 18px;
+    }
+    .emphasize-number {
+        font-size: 40px;
+        line-height: 40px;
+        margin-right: 8px;
+    }
+}

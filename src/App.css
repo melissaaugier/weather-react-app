@@ -1,6 +1,18 @@
+
 .App {
+  position: relative;
   display: flex;
   justify-content: flex-start;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Adjust opacity as needed */
+  z-index: 0; /* Ensure overlay is behind other content */
 }
 
 aside {
@@ -9,6 +21,41 @@ aside {
   flex-basis: 22%;
   border-radius: 16px;
   border: 1px solid #E0E3E1;  
+}
+
+main {
+  padding: 1rem 2rem;
+  width: 100%;
+  z-index: 1;
+}
+
+h1 {
+  margin: 0;
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 400;
+  background: rgba(0,0,0, 0.4);
+  background: linear-gradient(to top, rgba(0,0,0, 0.3) 0%, rgba(255, 255, 255, 0.9) 30%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  span {
+    font-size: 48px;
+  }
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.inline-flex {
+  display: inline-flex;
+  align-items: center;
 }
 
 .d-flex {
@@ -20,6 +67,10 @@ aside {
 
 .align-self-end {
   align-self: flex-end;
+}
+
+.bolder {
+  font-weight: 400;
 }
 
 .font-size-xxl {
@@ -54,7 +105,7 @@ aside {
 
 .font-size-xxs {
   font-size: 12px;
-  line-height: 12px;
+  line-height: 16px;
 }
 
 .mb-xxs {

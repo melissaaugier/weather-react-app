@@ -1,12 +1,10 @@
 import './WindTempComponent.css';
-import React, {useEffect, useContext, useState} from 'react';
-import { WeatherDataContext } from '../contexts/WeatherDataContext';
+import React, {useEffect, useState} from 'react';
 import {convertUnixToReadableTime} from '../utils/timeUtils';
 import {formatRainfallData} from '../utils/formatRainFallData';
 import RainfallChart from './RainfallChart';
 
-const WindTempComponent = () => {
-    const { weatherData } = useContext(WeatherDataContext);
+const WindTempComponent = ({weatherData}) => {
     const [currentWeather, setCurrentWeather] = useState(null);
     const [cityData, setCityData] = useState(null);
     const [currentTime, setCurrentTime] = useState(null);

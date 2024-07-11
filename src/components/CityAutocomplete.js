@@ -60,6 +60,7 @@ const CityAutocomplete = ({onCitySelect}) => {
         setCitySuggestions(null);
         fetchWeather(selectedCity);
         onCitySelect(selectedCity);
+        setCitiesError(false);
     };
 
     return ( 
