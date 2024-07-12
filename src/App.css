@@ -1,4 +1,18 @@
 
+main.hide,
+.asideContent.hide {
+  opacity: 0;
+  z-index: 0; /* Ensure it's behind the overlay initially */
+}
+
+/* Final state for main */
+main.show,
+.asideContent.show {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 1; /* Bring it above other content */
+}
+
 .App {
   position: relative;
   display: flex;
