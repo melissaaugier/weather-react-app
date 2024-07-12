@@ -8,7 +8,7 @@ const apiKey = process.env.REACT_APP_KEY_LOCATIONIQ;
 const apiUrlBase = `https://api.locationiq.com/v1/autocomplete?key=${apiKey}&accept-language=en&limit=4&normalizecity=1`;
 
 const CityAutocomplete = ({onCitySelect}) => {
-    const { fetchWeather, loading, error, setError } = useContext(WeatherDataContext);
+    const { setWeatherData, fetchWeather, loading, error, setError } = useContext(WeatherDataContext);
     const [city, setCity] = useState('');
     const [citiesLoading, setCitiesLoading] = useState(false);
     const [citiesError, setCitiesError] = useState(null);
@@ -61,6 +61,7 @@ const CityAutocomplete = ({onCitySelect}) => {
         fetchWeather(selectedCity);
         onCitySelect(selectedCity);
         setCitiesError(false);
+        setWeatherData(null);
     };
 
     return ( 

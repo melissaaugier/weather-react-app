@@ -62,7 +62,7 @@ export const WeatherDataProvider = ({ children }) => {
     }, [weatherData]);
 
     return (
-        <WeatherDataContext.Provider value={{ weatherData, loading, bgImg, error, setError, fetchWeather }}>
+        <WeatherDataContext.Provider value={{ weatherData, loading, bgImg, error, setError, fetchWeather, setWeatherData }}>
             {children}
         </WeatherDataContext.Provider>
     );

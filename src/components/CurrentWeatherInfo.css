@@ -1,5 +1,6 @@
 .weatherInfo {
     width: 60%;
+    min-width: 295px;
 
     p {
         margin: 0;
@@ -9,5 +10,22 @@
         font-size: 40px;
         line-height: 40px;
         margin-right: 8px;
+    }
+}
+
+
+@media screen and (max-width: 638px) {
+    .weatherInfo {
+        width: 100%;
+        max-width: 315px;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 639px) and (max-width: 768px) {
+    /* CSS rules for screens between 600px and 768px */
+    .weatherInfo {
+        width: 85%;
+        min-width: 225px;
     }
 }

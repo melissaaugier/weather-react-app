@@ -19,6 +19,7 @@ const AppContent = () => {
         backgroundPosition: 'center',
         height: '100%', 
         minHeight: '100vh', 
+        width: '100%'
       }}>
       <div className="overlay"></div>
       <aside>
@@ -27,7 +28,7 @@ const AppContent = () => {
         <AICityFunFacts city={selectedCity}/>
       </aside>
       <main>
-        { selectedCity &&
+        { weatherData &&
           <>
             <div className="container">
               <h2>INTERNATIONAL<br/>WEATHER</h2>

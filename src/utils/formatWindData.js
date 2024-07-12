@@ -24,7 +24,7 @@ export const formatWindData = (wind, humidity) => {
   
   return (    
       <div>
-          <p className="font-size-xxs">Humidity is at {humidity.toFixed(0)}%. The wind is blowing at {speed.toFixed(1) * 10}m.s at</p>
+          <p className="font-size-xxs">Humidity is at {humidity.toFixed(0)}%. Winds are blowing at {speed.toFixed(1) * 10}m.s at</p>
           <div className="d-flex weatherInfo">
               <p className='emphasize-number'>{deg}°</p>
               <p className="font-size-xxs">{direction}, but there will be brief periods when the wind speed will increase up to {(speed + gust).toFixed(1) * 10}m.s.</p>

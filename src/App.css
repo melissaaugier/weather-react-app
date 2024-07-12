@@ -3,6 +3,7 @@
   position: relative;
   display: flex;
   justify-content: flex-start;
+  min-width: 320px;
 }
 
 .overlay {
@@ -20,7 +21,12 @@ aside {
   backdrop-filter: blur(10px);
   flex-basis: 22%;
   border-radius: 16px;
-  border: 1px solid #E0E3E1;  
+  border: 1px solid #E0E3E1; 
+  min-height: 100vh; 
+
+  div:first-child {    
+    position: relative;
+  }
 }
 
 main {
@@ -55,6 +61,7 @@ h2 {
 
 .inline-flex {
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
 }
 
@@ -134,8 +141,16 @@ table {
 
 
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 638px) {
+  .App {
+    flex-direction: column;
+  }
+
   aside {
     padding: 2rem 1rem;
+  }
+
+  main {
+    padding: 1.5rem;
   }
 }
